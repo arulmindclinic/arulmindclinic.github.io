@@ -1,4 +1,4 @@
-# Vetri's Page [https://vetri.page]
+# arulmindclinic [https://arulmindclinic.github.io]
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0
 > Angular 10 + Material + Flex Layot + Firebase
