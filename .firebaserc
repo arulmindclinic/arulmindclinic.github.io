@@ -1,12 +1,12 @@
 {
   "projects": {
-    "default": "vetri-page"
+    "default": "arulmindclinic.github.io"
   },
   "targets": {
-    "vetri-page": {
+    "arulmindclinic.github.io": {
       "hosting": {
-        "vetri-page": [
-          "vetri-page"
+        "arulmindclinic.github.io": [
+          "arulmindclinic.github.io"
         ]
       }
     }

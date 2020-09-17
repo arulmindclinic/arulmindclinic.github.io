@@ -14,7 +14,7 @@
   },
   "hosting": [
     {
-      "public": "dist/vetri-page",
+      "public": "dist/arulmindclinic.github.io",
       "ignore": [
         "firebase.json",
         "**/.*",
@@ -28,8 +28,8 @@
       ]
     },
     {
-      "target": "vetri-page",
-      "public": "dist/vetri-page",
+      "target": "arulmindclinic.github.io",
+      "public": "dist/arulmindclinic.github.io",
       "ignore": [
         "**/.*"
       ],
