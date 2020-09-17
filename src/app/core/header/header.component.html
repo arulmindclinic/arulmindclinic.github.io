@@ -1,0 +1,127 @@
+<div>
+  <mat-toolbar color="primary">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <img
+      src="/assets/images/arulmindclinic.png"
+      style="width: 50px; height: 50px; vertical-align: middle;"
+    />
+    <span class="flex-spacer"></span>
+
+    <div fxShow="true" fxHide.lt-md="true">
+      <a mat-button routerLink="/home">Home</a>
+      <a mat-button routerLink="/services">Services</a>
+      <a mat-button routerLink="/about">About</a>
+      <a mat-button routerLink="/contact">Contact</a>
+      <button mat-icon-button [matMenuTriggerFor]="matmenu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+
+      <mat-menu #matmenu="matMenu">
+        <div *ngIf="authUserObs | async as currentUser; else signInUser">
+          <label mat-menu-item>Welcome {{ currentUser.displayName }},</label>
+          <a mat-menu-item routerLink="/admin">Admin</a>
+          <button mat-menu-item color="warn" (click)="signOut()">
+            Sign Out
+          </button>
+        </div>
+        <ng-template #signInUser>
+          <button mat-menu-item color="warn" (click)="signIn()">Sign In</button>
+        </ng-template>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav
+      color="primary"
+      #sidenav
+      fxLayout="column"
+      mode="over"
+      opened="false"
+      fxHide.gt-sm="true"
+      (click)="sidenav.toggle()"
+    >
+      <div fxLayout="column">
+        <a mat-button routerLink="/home">Home</a>
+        <a mat-button routerLink="/travel">Travel</a>
+        <a mat-button routerLink="/photography">Photography</a>
+        <a mat-button routerLink="/about">About</a>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <div style="height: 90vh;">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <!--
+  <mat-toolbar-row fxLayout class="nav-bar">
+    <nav fxFlex fxLayoutAlign="center">
+      <img src="/assets/images/seagull.png" style="width: 50px; height: 50px;padding-right: 10px" />
+      <button fxFlex mat-raised-button color="primary" routerLink="/home">Home</button>
+      <button fxFlex mat-raised-button color="primary" routerLink="/travel">Travel</button>
+      <button
+        fxFlex
+        fxHide.lt-sm="true"
+        mat-raised-button
+        color="primary"
+        routerLink="/photography"
+      >
+        Photography
+      </button>
+      <button fxFlex fxHide.lt-sm="true" mat-raised-button color="primary" routerLink="/about">
+        About me
+      </button>
+    </nav>
+  </mat-toolbar-row>
+  <mat-toolbar-row fxLayout fxHide fxShow.lt-sm="true" class="nav-bar">
+    <nav fxFlex fxLayout fxLayoutAlign="center">
+      <button fxFlex mat-raised-button color="primary" routerLink="/photography">
+        Photography
+      </button>
+      <button fxFlex mat-raised-button color="primary" routerLink="/about">About me</button>
+      <button fxFlex mat-raised-button color="primary" routerLink="/login">Sign In</button>
+    </nav>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<header>
+  <nav>
+    <div fxFlex fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
+      <img src="/assets/images/seagull.png" style="width: 50px; height: 50px;padding-right: 10px" />
+      <a mat-raised-button routerLink="/home">Home</a>
+      <a mat-raised-button routerLink="/travel">Travel</a>
+      <a mat-raised-button routerLink="/photography">
+        Photography
+      </a>
+      <a mat-raised-button routerLink="/about">
+        About me
+      </a>
+      <div fxFlex="1 1 65%"></div>
+
+      <button mat-icon-button [matMenuTriggerFor]="matmenu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #matmenu="matMenu">
+        <div *ngIf="(authUserObs | async) as currentUser; else signInUser">
+          <label mat-menu-item>Welcome {{ currentUser.displayName }},</label>
+          <a mat-menu-item routerLink="/admin">Admin</a>
+          <button mat-menu-item color="warn" (click)="signOut()">Sign Out</button>
+        </div>
+        <ng-template #signInUser>
+          <button mat-menu-item color="warn" (click)="signIn()">Sign In</button>
+        </ng-template>
+      </mat-menu>
+    </div>
+  </nav>
+  <section class="progress-bar">
+    <mat-progress-bar [color]="'primary'" [mode]="progressBarMode"> </mat-progress-bar>
+  </section>
+</header>
+--></div>

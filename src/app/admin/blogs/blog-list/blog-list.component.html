@@ -1,0 +1,20 @@
+<div>
+  <button mat-raised-button color="warn" (click)="addBlog()">Add new Blog</button>
+
+  <mat-accordion *ngFor="let blog of (blogs | async)">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ blog.title }}
+        </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div>
+        <markdown [data]="blog.content"></markdown>
+      </div>
+      <mat-action-row>
+        <button mat-button (click)="editBlog(blog.id)">Edit</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

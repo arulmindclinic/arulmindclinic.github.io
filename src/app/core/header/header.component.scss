@@ -1,0 +1,59 @@
+:host(app-header) {
+  .flex-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-sidenav-container {
+    min-height: 93vh !important;
+  }
+
+  .mat-sidenav-content {
+    font-size: 200%;
+    text-align: center;
+  }
+
+  div {
+    overflow: inherit;
+  }
+
+  /*header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 8px 16px;
+      color: white;
+      height: 4em;
+      background: #3f51b5;
+
+      .mat-raised-button1 {
+        color: #3f51b5;
+        margin-right: 1em;
+      }
+
+      .progress-bar {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        height: 5px;
+      }
+
+      .image-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      img {
+        vertical-align: middle;
+      }
+
+      #today {
+        font-size: 0.7em;
+      }
+    }
+  }*/
+}

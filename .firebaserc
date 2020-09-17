@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "vetri-page"
+  },
+  "targets": {
+    "vetri-page": {
+      "hosting": {
+        "vetri-page": [
+          "vetri-page"
+        ]
+      }
+    }
+  }
+}
