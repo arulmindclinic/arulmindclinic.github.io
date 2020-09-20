@@ -17,7 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
       markedOptions: {
         provide: MarkedOptions,
         useValue: {
-          sanitize: true
+          sanitize: false
         }
       }
     }),
