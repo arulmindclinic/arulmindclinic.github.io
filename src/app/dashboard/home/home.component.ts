@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.blogs = this.afs
-      .collection('blogs')
+      .collection('home')
       .snapshotChanges()
       .pipe(
         map(actions => {

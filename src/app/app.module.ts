@@ -19,7 +19,7 @@ import { AdminModule } from './admin/admin.module';
     BrowserModule,
     CoreModule,
     SharedModule,
-    AngularFireModule.initializeApp(environment.firebase, 'vetri-project'),
+    AngularFireModule.initializeApp(environment.firebase, 'arulmindclinic-30428'),
     AngularFireAuthModule,
     AngularFirestoreModule,
     BrowserAnimationsModule,

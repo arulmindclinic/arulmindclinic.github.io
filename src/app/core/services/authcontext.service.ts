@@ -22,7 +22,7 @@ export class AuthcontextService {
   }
 
   signIn() {
-    this.fireAuth.signInWithPopup(new auth.GoogleAuthProvider());
+    this.fireAuth.signInWithEmailAndPassword('arulmindclinic@gmail.com','test@123');
   }
 
   signOut() {

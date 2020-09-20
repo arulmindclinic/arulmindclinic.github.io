@@ -1,11 +1,10 @@
 <div>
-  <button mat-raised-button color="warn" (click)="addBlog()">Add new Blog</button>
 
-  <mat-accordion *ngFor="let blog of (blogs | async)">
+  <mat-accordion *ngFor="let blog of (homeBlogs | async)">
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          {{ blog.title }}
+         HOME
         </mat-panel-title>
         <mat-panel-description> </mat-panel-description>
       </mat-expansion-panel-header>
@@ -13,7 +12,63 @@
         <markdown [data]="blog.content"></markdown>
       </div>
       <mat-action-row>
-        <button mat-button (click)="editBlog(blog.id)">Edit</button>
+        <button mat-button (click)="editBlog('home',blog.id)">Edit</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<div>
+
+  <mat-accordion *ngFor="let blog of (services | async)">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          SERVICES
+        </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div>
+        <markdown [data]="blog.content"></markdown>
+      </div>
+      <mat-action-row>
+        <button mat-button (click)="editBlog('services',blog.id)">Edit</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<div>
+
+  <mat-accordion *ngFor="let blog of (contacts | async)">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          CONTACT
+        </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div>
+        <markdown [data]="blog.content"></markdown>
+      </div>
+      <mat-action-row>
+        <button mat-button (click)="editBlog('contact',blog.id)">Edit</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<div>
+  <mat-accordion *ngFor="let blog of (aboutBlogs | async)">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+         ABOUT
+        </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div>
+        <markdown [data]="blog.content"></markdown>
+      </div>
+      <mat-action-row>
+        <button mat-button (click)="editBlog('about',blog.id)">Edit</button>
       </mat-action-row>
     </mat-expansion-panel>
   </mat-accordion>

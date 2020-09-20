@@ -12,7 +12,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./blog-list.component.css']
 })
 export class BlogListComponent implements OnInit {
-  blogs: Observable<any[]>;
+  homeBlogs: Observable<any[]>;
+  services: Observable<any[]>;
+  aboutBlogs: Observable<any[]>;
+  contacts: Observable<any[]>;
   constructor(
     private router: Router,
     private afs: AngularFirestore,
@@ -20,8 +23,56 @@ export class BlogListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.blogs = this.afs
-      .collection('blogs')
+    this.homeBlogs = this.afs
+      .collection('home')
+      .snapshotChanges()
+      .pipe(
+        map(actions => {
+          return actions.map(a => {
+            //Get document data
+            const data = a.payload.doc.data() as Blog;
+            //Get document id
+            const id = a.payload.doc.id;
+            //Use spread operator to add the id to the document data
+            return { id, ...data };
+          });
+        })
+      );
+
+      this.services = this.afs
+      .collection('services')
+      .snapshotChanges()
+      .pipe(
+        map(actions => {
+          return actions.map(a => {
+            //Get document data
+            const data = a.payload.doc.data() as Blog;
+            //Get document id
+            const id = a.payload.doc.id;
+            //Use spread operator to add the id to the document data
+            return { id, ...data };
+          });
+        })
+      );
+
+      this.contacts = this.afs
+      .collection('contact')
+      .snapshotChanges()
+      .pipe(
+        map(actions => {
+          return actions.map(a => {
+            //Get document data
+            const data = a.payload.doc.data() as Blog;
+            //Get document id
+            const id = a.payload.doc.id;
+            //Use spread operator to add the id to the document data
+            return { id, ...data };
+          });
+        })
+      );
+
+      this.aboutBlogs = this.afs
+      .collection('about')
       .snapshotChanges()
       .pipe(
         map(actions => {
@@ -37,11 +88,7 @@ export class BlogListComponent implements OnInit {
       );
   }
 
-  addBlog() {
-    this.router.navigate(['/admin/blogs', 0]);
-  }
-
-  editBlog(id) {
-    this.router.navigate(['/admin/blogs', id]);
+  editBlog(pageType,id) {
+    this.router.navigate(['/admin/pages', id,{pageType: pageType}]);
   }
 }

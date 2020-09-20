@@ -4,7 +4,7 @@
     <input type="hidden" [formControl]="id" />
   </mat-form-field>
   Blog Content
-  <simplemde [(ngModel)]="content" [codemirror]="{ lineNumbers: true }" #mde></simplemde>
+  <simplemde [(ngModel)]="content" [codemirror]="{ lineNumbers: true }" [options]="options" #mde></simplemde>
 
   <button mat-raised-button color="warn" (click)="addUpdateBlog()">Save</button>
 </mat-card>

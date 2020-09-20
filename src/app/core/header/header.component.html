@@ -48,9 +48,18 @@
     >
       <div fxLayout="column">
         <a mat-button routerLink="/home">Home</a>
-        <a mat-button routerLink="/travel">Travel</a>
-        <a mat-button routerLink="/photography">Photography</a>
+        <a mat-button routerLink="/services">Services</a>
+        <a mat-button routerLink="/contact">Contact</a>
         <a mat-button routerLink="/about">About</a>
+        <div *ngIf="authUserObs | async as currentUser; else signInUser">
+          <a mat-button routerLink="/admin">Admin</a>
+          <button mat-button color="warn" (click)="signOut()">
+            Sign Out
+          </button>
+        </div>
+        <ng-template #signInUser>
+          <button mat-button color="warn" (click)="signIn()">Sign In</button>
+        </ng-template>
       </div>
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill>

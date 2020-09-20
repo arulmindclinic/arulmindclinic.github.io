@@ -12,9 +12,9 @@ const routes: Routes = [
     component: AdminComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: '', redirectTo: 'blogs', pathMatch: 'full' },
+      { path: '', redirectTo: 'pages', pathMatch: 'full' },
       {
-        path: 'blogs',
+        path: 'pages',
         component: BlogsComponent,
         children: [
           { path: '', component: BlogListComponent },

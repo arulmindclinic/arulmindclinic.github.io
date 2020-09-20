@@ -1,17 +1,12 @@
-<mat-card style="width: 500px; height: 300px;">
-  <mat-card-header>
-    <div mat-card-avatar class="dahboard-header-image"></div>
-    <mat-card-title>Dr. R. Arul Saravanan M.D., D.P.M.</mat-card-title>
-    <mat-card-subtitle></mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="assets/images/arul.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>      
-      MBBS from PSG IMS & R, Coimbatore
-      D.P.M from Institute of Mental Health, Madras Medical College
-      ​M.D from Kasthurba Medical College, Manipal
-      Professor, Department of Psychiatry at SRM Medical College & Hospital, Kattankulathur
-      ​Expertise in psychiatry for past 14 years
-    </p>
-  </mat-card-content>
-</mat-card>
+<div *ngFor="let blog of blogs | async">
+  <mat-card class="blog-card">
+    <mat-card-header>
+      <div mat-card-avatar class="dahboard-header-image"></div>
+      <mat-card-title>Dr. R. Arul Saravanan M.D., D.P.M.</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <markdown [data]="blog.content"></markdown>
+    </mat-card-content>
+  </mat-card>
+</div>
+

@@ -22,18 +22,18 @@ export class BlogsService {
     this.blogs.add(blog);
   }
 
-  getBlog(id) {
-    this.blogDoc = this.afs.doc<Blog>(`blogs/${id}`);
+  getBlog(pageType,id) {
+    this.blogDoc = this.afs.doc<Blog>(`${pageType}/${id}`);
     return this.blogDoc;
   }
 
-  updateBlog(id: string, blog: Blog) {
-    this.blogDoc = this.afs.doc<Blog>(`blogs/${id}`);
+  updateBlog(pageType,id: string, blog: Blog) {
+    this.blogDoc = this.afs.doc<Blog>(`${pageType}/${id}`);
     this.blogDoc.update(blog);
   }
 
-  deleteBlog(id: string) {
-    this.blogDoc = this.afs.doc<Blog>(`blogs/${id}`);
+  deleteBlog(pageType,id: string) {
+    this.blogDoc = this.afs.doc<Blog>(`${pageType}/${id}`);
     this.blogDoc.delete();
   }
 }
