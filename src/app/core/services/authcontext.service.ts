@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase';
+import firebase from 'firebase/app';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthcontextService {
   currentUser: firebase.User;
@@ -13,7 +13,7 @@ export class AuthcontextService {
 
   authObserver(): Observable<firebase.User> {
     return this.fireAuth.authState.pipe(
-      map(user => {
+      map((user) => {
         this.currentUser = user;
         console.log('logged in user' + this.currentUser);
         return user;
@@ -22,7 +22,10 @@ export class AuthcontextService {
   }
 
   signIn() {
-    this.fireAuth.signInWithEmailAndPassword('arulmindclinic@gmail.com','test@123');
+    this.fireAuth.signInWithEmailAndPassword(
+      'arulmindclinic@gmail.com',
+      'test@123'
+    );
   }
 
   signOut() {

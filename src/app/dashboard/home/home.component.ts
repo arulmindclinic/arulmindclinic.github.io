@@ -1,6 +1,11 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  Renderer2,
+} from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { BlogsService } from './../../core/services/blogs.service';
 import { Observable } from 'rxjs';
@@ -10,7 +15,7 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   //public content: string;
@@ -19,15 +24,18 @@ export class HomeComponent implements OnInit {
 
   blogs: Observable<any[]>;
 
-  constructor(private afs: AngularFirestore, private blogsService: BlogsService) {}
+  constructor(
+    private afs: AngularFirestore,
+    private blogsService: BlogsService
+  ) {}
 
   ngOnInit() {
     this.blogs = this.afs
       .collection('home')
       .snapshotChanges()
       .pipe(
-        map(actions => {
-          return actions.map(a => {
+        map((actions) => {
+          return actions.map((a) => {
             //Get document data
             const data = a.payload.doc.data() as Blog;
             //Get document id

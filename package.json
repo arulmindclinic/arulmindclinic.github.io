@@ -26,7 +26,7 @@
     "@types/simplemde": "^1.11.7",
     "codemirror": "^5.57.0",
     "core-js": "^3.6.4",
-    "firebase": "^7.8.2",
+    "firebase": "^8.9.1",
     "ng2-simplemde": "^2.1.0",
     "ngx-markdown": "^9.0.0",
     "rxjs": "~6.5.4",
