@@ -1,14 +1,5 @@
 {
   "projects": {
-    "default": "arulmindclinic.github.io"
-  },
-  "targets": {
-    "arulmindclinic.github.io": {
-      "hosting": {
-        "arulmindclinic.github.io": [
-          "arulmindclinic.github.io"
-        ]
-      }
-    }
+    "default": "arulmindclinic-30428"
   }
 }
