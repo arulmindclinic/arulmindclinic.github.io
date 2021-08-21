@@ -1,6 +1,7 @@
 # arulmindclinic.github.io
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0
+
 > Angular 10 + Material + Flex Layot + Firebase
 
 ## Development server
@@ -26,3 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# To deploy in angular guthub pages
+
+`ng deploy --base-href=arulmindclinic.github.io`
